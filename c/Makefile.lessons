@@ -1,0 +1,20 @@
+# make -f Makefile.lessons
+CC      = gcc
+STD     = -std=c23
+CFLAGS  = -Wall -Wextra -pedantic -Isrc -D_CRT_SECURE_NO_WARNINGS
+SRC_DIR = src/lessons
+OUT_DIR = dist/lessons
+
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+BINS = $(patsubst $(SRC_DIR)/%.c, $(OUT_DIR)/%, $(SRCS))
+
+.PHONY: all clean
+
+all: $(BINS)
+
+$(OUT_DIR)/%: $(SRC_DIR)/%.c src/common.h
+	@mkdir -p $(OUT_DIR)
+	$(CC) $(STD) $(CFLAGS) -o $@ $<
+
+clean:
+	rm -rf $(OUT_DIR)

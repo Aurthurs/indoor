@@ -1,0 +1,31 @@
+# 编译产物
+dist/
+build/
+out/
+target/
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+
+# 依赖与缓存
+node_modules/
+*.tsbuildinfo
+.eslintcache
+.cache/
+
+# 日志与临时文件
+*.log
+logs/
+*.local
+tmp/
+
+# 环境变量
+.env
+.env.*
+
+# rust 旧仓库备份
+rust.git.bak/

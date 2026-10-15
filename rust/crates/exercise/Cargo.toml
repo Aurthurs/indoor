@@ -1,0 +1,8 @@
+[package]
+name = "exercise"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+ferris-says.workspace = true

@@ -1,0 +1,19 @@
+// 项目调试配置，按 F4 即可选择启动哪个调试任务
+// 文档: https://zed.dev/docs/debugger
+//
+// 提示：在 var_one.rs 的 hello() 方法内设置断点后，
+// 启动「调试程序」即可命中。
+[
+  {
+    "label": "exercise - 调试程序",
+    "adapter": "CodeLLDB",
+    // 编译 bin 目标，路径稳定（target/debug/exercise.exe），不会像测试二进制那样带 hash
+    "build": {
+      "command": "cargo",
+      "args": ["build", "-p", "exercise"],
+    },
+    "program": "$ZED_WORKTREE_ROOT/target/debug/exercise.exe",
+    "sourceLanguages": ["rust"],
+    "request": "launch",
+  },
+]

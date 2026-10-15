@@ -1,0 +1,19 @@
+[
+  {
+    "label": "测试方法-hello",
+    "command": "cargo",
+    "args": [
+      "test",
+      "-p",
+      // 模块单独写出
+      "exercise",
+      "variable::var_one::tests::test_hello",
+      // 传递参数需要 -- 分隔
+      "--",
+      "123",
+      "456",
+      "--show-output",
+    ],
+    "use_new_terminal": true,
+  },
+]

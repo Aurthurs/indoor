@@ -1,0 +1,140 @@
+/* ==========================================================
+   Vue Indoor · 全局设计令牌
+   主题：青绿 · 空间感 · 宽松布局
+   ========================================================== */
+
+:root {
+  /* ---------- 配色 ---------- */
+  --c-ink: #16302d; /* 墨青 —— 主文字 */
+  --c-muted: #5f7573; /* 青灰 —— 次要文字 */
+  --c-faint: #8aa3a0; /* 淡青灰 —— 说明 / 占位 */
+  --c-teal: #0e9488; /* 主青绿 —— 强调 / 交互 */
+  --c-teal-strong: #0b7a71; /* 深青绿 —— hover / 按下 */
+  --c-mint: #d7f3ee; /* 薄荷 —— 浅底 / 选中 */
+  --c-mist: #f4faf9; /* 雾青白 —— 页面背景 */
+  --c-surface: #ffffff; /* 表面 */
+  --c-line: #e1efec; /* 细线 —— 边框 / 分隔 */
+  --c-line-strong: #c4ded8; /* 强调细线 */
+
+  /* ---------- 字体 ---------- */
+  --ff-display: 'Space Grotesk', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --ff-body: 'Inter', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --ff-mono: 'JetBrains Mono', 'Cascadia Code', Consolas, monospace;
+
+  /* ---------- 字号（宽松比例） ---------- */
+  --fs-xs: 0.75rem; /* 12 —— 眉标 / 说明 */
+  --fs-sm: 0.875rem; /* 14 */
+  --fs-base: 1rem; /* 16 —— 正文 */
+  --fs-lg: 1.25rem; /* 20 */
+  --fs-xl: 1.75rem; /* 28 */
+  --fs-2xl: 2.5rem; /* 40 —— 页面主标题 */
+  --fs-3xl: 3.5rem; /* 56 —— 展示 */
+
+  /* ---------- 间距（宽松） ---------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-8: 4rem;
+  --sp-12: 6rem;
+  --sp-16: 8rem;
+
+  /* ---------- 圆角 ---------- */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-full: 999px;
+
+  /* ---------- 阴影 ---------- */
+  --sh-sm: 0 1px 2px rgb(14 148 136 / 0.05);
+  --sh-md: 0 6px 16px rgb(14 148 136 / 0.08);
+  --sh-lg: 0 16px 48px rgb(14 148 136 / 0.12);
+
+  /* ---------- Element Plus 主题色（青绿） ---------- */
+  --el-color-primary: #0e9488;
+  --el-color-primary-light-3: #56b4ac;
+  --el-color-primary-light-5: #87c9c3;
+  --el-color-primary-light-7: #b7dfdc;
+  --el-color-primary-light-8: #cfecea;
+  --el-color-primary-light-9: #e7f5f4;
+  --el-color-primary-dark-2: #0b766d;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  line-height: 1.75;
+  color: var(--c-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ---------- 交互 ---------- */
+a {
+  color: var(--c-teal);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--c-teal-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--c-teal);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--c-mint);
+  color: var(--c-teal-strong);
+}
+
+/* ---------- 标题 ---------- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--c-ink);
+}
+
+/* ---------- 等宽（数据 / 坐标） ---------- */
+code,
+pre,
+kbd,
+samp {
+  font-family: var(--ff-mono);
+  font-size: 0.9em;
+}
+
+/* ---------- 无障碍：减少动效 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

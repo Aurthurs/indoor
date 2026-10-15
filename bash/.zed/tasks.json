@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Run one.sh",
+    "cwd": "D:/project/bash-indoor/exercise",
+    "command": "./one.sh 首都 '(1,2,3,4)'",
+  },
+  {
+    "label": "Run variable.sh",
+    "cwd": "D:/project/bash-indoor/scripts",
+    "command": "./variable.sh",
+  },
+  {
+    "label": "Run string.sh",
+    "cwd": "D:/project/bash-indoor/",
+    "command": "./string.sh",
+  },
+  {
+    "label": "Run array.sh",
+    "cwd": "D:/project/bash-indoor/",
+    "command": "./array.sh",
+  },
+]

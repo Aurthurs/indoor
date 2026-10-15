@@ -1,0 +1,69 @@
+// Project-local debug tasks
+//
+// For more documentation on how to configure debug tasks,
+// see: https://zed.dev/docs/debugger
+[
+  {
+    "label": "调试 01-basics",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "gcc",
+      "args": [
+        "-std=c23",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-o",
+        "dist/01-basics",
+        "src/lessons/01-basics.c",
+      ],
+      "cwd": "$ZED_WORKTREE_ROOT",
+    },
+    "program": "$ZED_WORKTREE_ROOT/dist/01-basics",
+    "cwd": "$ZED_WORKTREE_ROOT",
+  },
+  {
+    "label": "调试 03-array-string",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "gcc",
+      "args": [
+        "-std=c23",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-o",
+        "dist/03-array-string",
+        "src/lessons/03-array-string.c",
+      ],
+      "cwd": "$ZED_WORKTREE_ROOT",
+    },
+    "program": "$ZED_WORKTREE_ROOT/dist/03-array-string",
+    "cwd": "$ZED_WORKTREE_ROOT",
+  },
+  {
+    "label": "调试 04-pointer",
+    "adapter": "CodeLLDB",
+    "request": "launch",
+    "build": {
+      "command": "gcc",
+      "args": [
+        "-std=c23",
+        "-g",
+        "-Wall",
+        "-Wextra",
+        "-pedantic",
+        "-o",
+        "dist/04-pointer",
+        "src/lessons/04-pointer.c",
+      ],
+      "cwd": "$ZED_WORKTREE_ROOT",
+    },
+    "program": "$ZED_WORKTREE_ROOT/dist/04-pointer",
+    "cwd": "$ZED_WORKTREE_ROOT",
+  },
+]

@@ -1,0 +1,209 @@
+@import './base.css';
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------- shadcn / Inspira UI 语义变量（映射青绿 token） ---------- */
+:root {
+  --background: var(--c-mist);
+  --foreground: var(--c-ink);
+  --card: var(--c-surface);
+  --card-foreground: var(--c-ink);
+  --popover: var(--c-surface);
+  --popover-foreground: var(--c-ink);
+  --primary: var(--c-teal);
+  --primary-foreground: #ffffff;
+  --secondary: var(--c-mint);
+  --secondary-foreground: var(--c-teal-strong);
+  --muted: var(--c-mist);
+  --muted-foreground: var(--c-muted);
+  --accent: var(--c-mint);
+  --accent-foreground: var(--c-teal-strong);
+  --destructive: #e5484d;
+  --destructive-foreground: #ffffff;
+  --border: var(--c-line);
+  --input: var(--c-line-strong);
+  --ring: var(--c-teal);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: #0f1a18;
+  --foreground: #e8f2f0;
+  --card: #14211f;
+  --card-foreground: #e8f2f0;
+  --popover: #14211f;
+  --popover-foreground: #e8f2f0;
+  --primary: #2dd4bf;
+  --primary-foreground: #0f1a18;
+  --secondary: #1a2b28;
+  --secondary-foreground: #a7d8d0;
+  --muted: #1a2b28;
+  --muted-foreground: #7fa39e;
+  --accent: #1a2b28;
+  --accent-foreground: #a7d8d0;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fecaca;
+  --border: #22332f;
+  --input: #2a3d39;
+  --ring: #2dd4bf;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  color-scheme: light;
+}
+
+/* ---------- 页面背景：极淡坐标网格（室内定位感） ---------- */
+body {
+  background-color: var(--c-mist);
+  background-image:
+    linear-gradient(to right, rgb(14 148 136 / 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(14 148 136 / 0.035) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ---------- 应用根 ---------- */
+#app {
+  font-weight: normal;
+}
+
+/* ---------- 内容容器（宽松） ---------- */
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--sp-6);
+}
+
+/* ---------- 宽松排印 ---------- */
+h1 {
+  font-size: var(--fs-2xl);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-5);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--sp-4);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-3);
+}
+
+h4 {
+  font-size: var(--fs-base);
+  margin-bottom: var(--sp-2);
+}
+
+p {
+  margin-bottom: var(--sp-4);
+  max-width: 65ch;
+}
+
+/* ---------- 眉标 ---------- */
+.eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-teal);
+}
+
+/* ---------- 示例面板（学习示例组件复用） ---------- */
+.demo-panel {
+  background: var(--c-mist);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+}
+
+.demo-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.demo-panel ul {
+  list-style: none;
+  margin-top: var(--sp-2);
+}
+
+.demo-panel li + li {
+  margin-top: var(--sp-2);
+}
+
+/* ---------- 示例控件 ---------- */
+.demo-btn {
+  font-family: var(--ff-body);
+  font-size: var(--fs-sm);
+  color: #fff;
+  background: var(--c-teal);
+  border: none;
+  border-radius: var(--r-sm);
+  padding: var(--sp-2) var(--sp-4);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.demo-btn:hover {
+  background: var(--c-teal-strong);
+}
+
+.demo-btn + .demo-btn {
+  margin-left: var(--sp-2);
+}
+
+.demo-input {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  color: var(--c-ink);
+  background: var(--c-surface);
+  border: 1px solid var(--c-line-strong);
+  border-radius: var(--r-sm);
+  padding: var(--sp-2) var(--sp-3);
+}
+
+.demo-input:focus {
+  outline: none;
+  border-color: var(--c-teal);
+  box-shadow: 0 0 0 3px var(--c-mint);
+}
